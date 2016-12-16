@@ -9,7 +9,7 @@ int main(){
 	system("TITLE Неопознанный консольный объект");
 	system("color 2");
 
-	// алгоритм взвешенного быстрого соединения(weighted quick-union algorythm)
+	// алгоритм взвешенного быстрого соединения(weighted quick-union with path compression by halving algorythm)
 	const int N = 10;
 	int id[N], sz[N], p, q; // массив ID-все числа попорядку , p-q пара, SZ - массив с количеством связей в дереве
 
@@ -29,9 +29,13 @@ int main(){
 	{
 
 		int i, j;
-
-		for (i = p; i != id[i]; i = id[i]);
-		for (j = q; j != id[j]; j = id[j]);
+		// делаем дерево плоским
+		for (i = p; i != id[i]; i = id[i]) {
+			id[i] = id[id[i]]; // Уменьшем пути пополам
+		};
+		for (j = q; j != id[j]; j = id[j]) {
+			id[j] = id[id[j]]; // уменьшаем пути пополам
+		};
 		if (i == j) { cout << -1 << endl; continue; } // если p = q переходим к следующей итерации (если связь УЖЕ есть!)
 
 		// выбираем необходимое дерево

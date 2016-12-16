@@ -1,8 +1,6 @@
-﻿Build started 16.12.2016 10:53:46.
+﻿Build started 16.12.2016 11:25:22.
 Project "D:\course-c\algorythm\algorythm_00\algorythm_00.vcxproj" on node 2 (Build target(s)).
 ClCompile:
-  C:\Program Files\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yc"stdafx.h" /Fp"Debug\algorythm_00.pch" /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
-  stdafx.cpp
   C:\Program Files\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"stdafx.h" /Fp"Debug\algorythm_00.pch" /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt algorythm_00.cpp
   algorythm_00.cpp
 Link:
@@ -13,4 +11,4 @@ Done Building Project "D:\course-c\algorythm\algorythm_00\algorythm_00.vcxproj" 
 
 Build succeeded.
 
-Time Elapsed 00:00:10.27
+Time Elapsed 00:00:16.33
