@@ -107,8 +107,74 @@ int main(){
 		tri.right.y = 0.0;
 		cout << "Площадь треугольника равна: " << triangle_square(tri) << endl;
 		*/
+		//Решето Эрастофена
+		/*
+		unsigned int N = 150000000;
+		int* a = new int[N];
+		if (a == 0) {
+		cout << "out of memory" << endl;
+		return -1;
+		}
+		for (int i(0); i < N; i++) {
+		a[i] = 1;
+		}
+		for (int i(2); i < N; i++) {
+		if (a[i]) {
+		for (int j(i); j*i < N; j++) {
+		a[i*j] = 0;
+		}
+		}
+		}
+		for (int i(0); i < N; i++) {
+		if (a[i]) {
+		cout << a[i] << "  " << i << endl;
+		}
+		}
+		delete[] a;
+		*/
+		// Бросаем монетку
+		/*
+		int i,j,cnt, N = 32, M = 1000;
+		int* f = new int[N + 1];
+		for (j = 0; j < N; j++) {
+		f[j] = 0;
+		}
+		for (i = 0; i < M; i++, f[cnt]++) {
+		for (cnt = 0, j = 0; j <= N; j++) {
+		if (heads()) {
+		cnt++;
+		}
+		}
+		}
+		for (j = 0; j <= N; j++) {
+		if (f[j] == 0) {
+		cout << ".";
+		}
+		for (i = 0; i < f[j]; i += 10) {
+		cout << "*";
+		}
+		cout << endl;
+		}
+		delete[] f;
+		*/
 	}
-	
+	//Вычисление ближайшей точки
+	float d = 0.2; // расстояние меньше d
+	int i, cnt = 0, N = 50;
+	Point* a = new Point[N];
+	for (i = 0; i < N; i++) {
+		a[i].x = randFloat();
+		a[i].y = randFloat();
+	}
+	for (i = 0; i < N; i++) {
+		for (int j(i + 1); j < N; j++) {
+			if (distance(a[i], a[j]) < d) {
+				cnt++;
+			}
+		}
+	}
+	cout << cnt << " pairs within (пар в пределах) " << d << endl;
+	delete[] a;
 
 	_getch();
     return 0;
