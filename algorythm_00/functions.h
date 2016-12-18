@@ -33,3 +33,13 @@ double triangle_square(const Triangle& tr) {
 	S = sqrt(P*(P - a)*(P - b)*(P - c));
 	return S;
 }
+
+int heads() {
+	return rand() < RAND_MAX / 2;
+}
+float randFloat() {
+	return 1.0*rand() / RAND_MAX;
+}
+float distance(Point& a, Point& b) {
+	return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2));
+}
