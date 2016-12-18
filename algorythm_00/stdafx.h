@@ -9,6 +9,11 @@
 
 #include <iostream>
 #include <conio.h>
+#include <cstdlib>
+#include <cmath>
+#include <random>
+#include <ctime>
+
 
 
 
