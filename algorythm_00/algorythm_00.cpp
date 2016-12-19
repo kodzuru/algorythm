@@ -3,6 +3,8 @@
 
 #include "stdafx.h"
 #include "functions.h"
+typedef unsigned int ui;
+
 
 using namespace std;
 int main(){
@@ -107,9 +109,9 @@ int main(){
 		tri.right.y = 0.0;
 		cout << "Площадь треугольника равна: " << triangle_square(tri) << endl;
 		*/
-		//Решето Эрастофена
+		//Решето Эрастофена 3.5 3.054
 		/*
-		unsigned int N = 150000000;
+		unsigned int N = 50000;
 		int* a = new int[N];
 		if (a == 0) {
 		cout << "out of memory" << endl;
@@ -131,6 +133,26 @@ int main(){
 		}
 		}
 		delete[] a;
+
+		//через vector runtime 0.07
+		const ui N = 50;
+		vector<int> a(N);
+		for (int i(0); i < a.size(); i++) {
+		a[i] = 1;
+		}
+		for (int i(2); i < a.size(); i++) {
+		if (a[i]) {
+		for (int j(i); j*i < a.size(); j++) {
+		a[i*j] = 0;
+		}
+		}
+		}
+		for (int i(0); i < a.size(); i++) {
+		if (a[i]) {
+		cout << a[i] << "  " << i << endl;
+		}
+		}
+
 		*/
 		// Бросаем монетку
 		/*
@@ -157,24 +179,51 @@ int main(){
 		}
 		delete[] f;
 		*/
-	}
-	//Вычисление ближайшей точки
-	float d = 0.2; // расстояние меньше d
-	int i, cnt = 0, N = 50;
-	Point* a = new Point[N];
-	for (i = 0; i < N; i++) {
+		//Вычисление ближайшей точки
+		/*
+		float d = 0.2; // расстояние меньше d
+		int i, cnt = 0, N = 50;
+		Point* a = new Point[N];
+		for (i = 0; i < N; i++) {
 		a[i].x = randFloat();
 		a[i].y = randFloat();
-	}
-	for (i = 0; i < N; i++) {
-		for (int j(i + 1); j < N; j++) {
-			if (distance(a[i], a[j]) < d) {
-				cnt++;
-			}
 		}
+		for (i = 0; i < N; i++) {
+		for (int j(i + 1); j < N; j++) {
+		if (distance(a[i], a[j]) < d) {
+		cnt++;
+		}
+		}
+		}
+		cout << cnt << " pairs within (пар в пределах) " << d << endl;
+		delete[] a;
+		*/
+		// 3.10
+		/*
+		const int N = 10;
+		int a[N];
+		for (int i(0); i < N; i++) {
+		a[i] = N - i;
+		cout << a[i] << " ";
+		}
+		cout << endl;
+		for (int i(0); i < N; i++) {
+		a[i] = a[a[i]]; //меняются местами элементы, нулевого(a[10]) не существует
+		cout << a[i] << " ";
+		}
+		cout << endl;
+		*/
+		//3.14 рассчёт времени выполнения программы
+		/*		
+		ui start_time = clock();	
+
+		ui end_time = clock();
+		double runtime = double(end_time - start_time) / CLOCKS_PER_SEC;
+		cout << "Время выполнения программы: " << runtime << endl; // 0.007
+		*/
 	}
-	cout << cnt << " pairs within (пар в пределах) " << d << endl;
-	delete[] a;
+	
+
 
 	_getch();
     return 0;
