@@ -259,9 +259,26 @@ int main(){
 		cout << cnt << endl;
 		delete x;
 		*/
-	}
+		//список в обратном поряке 3.10
+		/*
+		node* list_start = nodeInit_list(10);
+		node* x = list_start;
 
+		for (int i(0); i < 10; i++) {
+		std::cout << x << " " << x->item << "  " << x->next << std::endl;
+		x = x->next;
+		}
+		cout << endl;
+		node* x_1 = list_start;
+		node* rv = reverse_1(x_1);
+		for (int i(0); i < 10; i++) {
+		std::cout << rv << " " << rv->item << "  " << rv->next << std::endl;
+		rv = rv->next;
+		}
+		*/
+	}
 	
+
 	_getch();
     return 0;
 }

@@ -1,5 +1,5 @@
 ﻿#pragma once
-
+using namespace std;
 int lg(int N){
 	int i;
 	for (i = 0; N > 0; i++, N /= 2);
@@ -44,7 +44,7 @@ float distance(Point& a, Point& b) {
 	return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2));
 }
 
-
+//структура узла списка
 struct node {
 	int item;
 	node* next;
@@ -53,7 +53,7 @@ struct node {
 		next = t;
 	}
 };
-
+//циклический список
 node* nodeInit(int N) {
 	node* t = new node(0, NULL);
 	t->next = t;
@@ -73,4 +73,32 @@ int nodeSize(node* x) {
 		x = x->next;
 	};
 	return (cnt + 1);
+}
+
+
+struct list {
+	int key;
+	list* next;
+};
+
+//односвязанный список с концом
+node* nodeInit_list(int N) {
+	node* t = new node(0, NULL);
+	node* x = t;
+	for (int i = 1; i < N; i++) {
+		t = (t->next = new node(i, NULL));
+	}
+	return x;
+}
+
+//переворачивает список
+node* reverse_1(node* x) {
+	node *t, *y = x, *r = NULL; // p. 101
+	while (y != NULL) {
+		t = y->next;
+		y->next = r;
+		r = y;
+		y = t;
+	}
+	return r;
 }
