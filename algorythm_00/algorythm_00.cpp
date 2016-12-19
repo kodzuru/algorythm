@@ -221,10 +221,47 @@ int main(){
 		double runtime = double(end_time - start_time) / CLOCKS_PER_SEC;
 		cout << "Время выполнения программы: " << runtime << endl; // 0.007
 		*/
+		//Задача Иосифа Флавия 3.9
+		/*
+		int i, N = 9, M = 5;//N - всего позиций, M - с которого начинаем считать
+		//создаём циклический список
+		node* t = new node(1, NULL);
+		t->next = t;
+		node* x = t; // x - адрес начального узла
+		cout << x << " " << x->item << "  " << x->next << endl;
+		cout << endl;
+		//создаём циклический списов
+		for (i = 2; i <= N; i++) {
+		x = (x->next = new node(i, t));
+		cout << x << " " << x->item << "  " << x->next << endl;
+		}
+		cout << endl;
+		//убиваем своего
+		while (x != x->next) //ссылается ли текущий элемент сам на себя
+		{
+		cout << endl << x << " " << x->item << "  " << x->next << endl << endl;
+		for (i = 1; i < M; i++)// проходим 4 позиции
+		{
+		x = x->next;
+		cout << x << " " << x->item << "  " << x->next << endl;
+		}
+		x->next = x->next->next; // перескакиваем через 1 (удаляем уго из списка)
+
+		}
+		cout << endl << x->item << endl; // выводим оставшуюся позицию
+		delete t;
+		*/
+		// 3.23
+		/*
+		int cnt, N = 500;
+		node* x = nodeInit(N);
+		cnt = nodeSize(x);
+		cout << cnt << endl;
+		delete x;
+		*/
 	}
+
 	
-
-
 	_getch();
     return 0;
 }
