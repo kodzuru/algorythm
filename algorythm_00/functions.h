@@ -43,3 +43,34 @@ float randFloat() {
 float distance(Point& a, Point& b) {
 	return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2));
 }
+
+
+struct node {
+	int item;
+	node* next;
+	node(int x, node* t) {
+		item = x;
+		next = t;
+	}
+};
+
+node* nodeInit(int N) {
+	node* t = new node(0, NULL);
+	t->next = t;
+	node* x = t;
+	for (int i = 1; i < N; i++) {
+		x = (x->next = new node(i, t));		
+	}
+	return x;
+}
+
+int nodeSize(node* x) {
+	int cnt = 0;
+	node* temp = x;
+	while(x->next != temp) {
+		//std::cout << x << " " << x->item << "  " << x->next << std::endl;
+		cnt++;
+		x = x->next;
+	};
+	return (cnt + 1);
+}

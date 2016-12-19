@@ -14,6 +14,7 @@
 #include <random>
 #include <ctime>
 #include <vector>
+#include <algorithm>
 
 
 
