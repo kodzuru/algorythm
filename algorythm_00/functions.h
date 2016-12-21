@@ -83,10 +83,10 @@ struct list {
 
 //односвязанный список с концом
 node* nodeInit_list(int N) {
-	node* t = new node(0, NULL);
+	node* t = new node(0, NULL); //соглашения о нулевом элементе
 	node* x = t;
 	for (int i = 1; i < N; i++) {
-		t = (t->next = new node(i, NULL));
+		t = (t->next = new node(i*10, NULL));
 	}
 	return x;
 }
@@ -101,4 +101,14 @@ node* reverse_1(node* x) {
 		y = t;
 	}
 	return r;
+}
+
+//односвязанный список с концом cо случайными элементами
+node* nodeInit_list_rand(int N) {
+	node* t = new node(0, NULL); //соглашение о нулевом элементе
+	node* x = t;
+	for (int i = 1; i < N; i++) {
+		t = (t->next = new node(rand()%100, NULL));
+	}
+	return x;
 }
