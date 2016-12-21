@@ -276,7 +276,35 @@ int main(){
 		rv = rv->next;
 		}
 		*/
+		// 3.11 вставка в сортированный список
+		/*
+		node* rand_x = nodeInit_list_rand(5);
+		node *a = rand_x, *t = rand_x;
+		cout << endl;
+		node* sort_x = nodeInit_list(10);
+		node *u, *x, *b = sort_x;
+		for (t = a->next; t != NULL; t = u) //выбираем элемент списка
+		{
+		u = t->next;
+		for (x = b; x->next != NULL; x = x->next) //проходим сортированый список
+		{
+		if (x->next->item > t->item) // ищем куда вставить
+		{
+		break;
+		}
+		}
+		//переходим к следующему элементу вставляемого списка
+		t->next = x->next;
+		x->next = t;
+		}
+		while (b) {
+		std::cout << b << " " << b->item << "  " << b->next << std::endl;
+		b = b->next;
+		}
+		*/
 	}
+
+	
 	
 
 	_getch();
