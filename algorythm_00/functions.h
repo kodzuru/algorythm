@@ -52,7 +52,7 @@ struct node {
 		item = x;
 		next = t;
 	}
-	node() {}
+	node(){}
 };
 //циклический список
 node* nodeInit(int N) {
@@ -87,7 +87,7 @@ node* nodeInit_list(int N) {
 	node* t = new node(0, NULL); //соглашения о нулевом элементе
 	node* x = t;
 	for (int i = 1; i < N; i++) {
-		t = (t->next = new node(i*10, NULL));
+		t = (t->next = new node(i, NULL));
 	}
 	return x;
 }
@@ -121,4 +121,25 @@ node* nodeInit_list_rand_without_head(int N) {
 		t = (t->next = new node(rand() % 100, NULL));
 	}
 	return x;
+}
+// выводит список
+void nodePrint(node* t) {
+	std::cout << std::endl;
+	node* x = t;
+	while (x) {
+		std::cout << x << " " << x->item << "  " << x->next << std::endl;
+		x = x->next;
+	}
+	std::cout << std::endl;
+}
+
+node* construct(int N) {
+	node* freelist = new node[N+1]();
+	for (int i(0); i < N; i++) {
+		freelist[i].item = i;
+		freelist[i].next = &freelist[i + 1];
+	}
+	freelist[N].next = NULL;
+	freelist[N].item = N;
+	return freelist;
 }
