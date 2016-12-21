@@ -329,45 +329,36 @@ int main(){
 		x_1 = x_1->next;
 		}
 		*/
-	}
-	// 3.34
-	node* rand_list_x = nodeInit_list_rand_without_head(10);
-	node* x = rand_list_x;
-	while (x) {
-		std::cout << x << " " << x->item << "  " << x->next << std::endl;
-		x = x->next;
-	}
+		// 3.34
+		/*
+		node* rand_list_x = nodeInit_list_rand_without_head(10);
+		node* x = rand_list_x;
+		node* y = rand_list_x;
+		node* a = rand_list_x;
+		nodePrint(x);
 
-	/*
-	node* rand_list_x = nodeInit_list_rand(10);
-	node* x = rand_list_x;
-	node* y = rand_list_x->next;
-	while (x) {
-		std::cout << x << " " << x->item << "  " << x->next << std::endl;
-		x = x->next;
-	}
-	cout << endl;
-	node* a = rand_list_x->next;
-	while (y) {
-		if (a->item > y->item) {
-			a = y;
-			if (!a->next) {
-				y->next = NULL;
-			}
+		while (y) {
+		if (y->item < a->item) {
+		a = new node(y->item, NULL);
 		}
 		y = y->next;
+		}
+		a->next = rand_list_x;
+		nodePrint(a);
+
+		delete a;
+		*/
+		//странный конструктор списка
+		/*
+		node* freelist = construct(10);
+		nodePrint(freelist);
+		*/
 	}
-	a->next = rand_list_x->next->next;
-	rand_list_x->next = a;
-	node* x_1 = rand_list_x;
-	std::cout << a << " " << a->item << "  " << a->next << std::endl;
-	std::cout << rand_list_x << " " << rand_list_x->item << "  " << rand_list_x->next << std::endl;
-	cout << endl;
-	while (x_1) {
-		std::cout << x_1 << " " << x_1->item << "  " << x_1->next << std::endl;
-		x_1 = x_1->next;
-	}
-	*/
+
+
+
+
+	
 	_getch();
     return 0;
 }
