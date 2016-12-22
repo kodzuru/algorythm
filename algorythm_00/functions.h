@@ -52,6 +52,7 @@ struct node {
 		item = x;
 		next = t;
 	}
+	node() {}
 };
 //циклический список
 node* nodeInit(int N) {
@@ -81,7 +82,7 @@ struct list {
 	list* next;
 };
 
-//односвязанный список с концом
+//односвязанный список с концом и мнимым начальным элементом
 node* nodeInit_list(int N) {
 	node* t = new node(0, NULL); //соглашения о нулевом элементе
 	node* x = t;
@@ -103,12 +104,21 @@ node* reverse_1(node* x) {
 	return r;
 }
 
-//односвязанный список с концом cо случайными элементами
+//односвязанный список с концом cо случайными элементами  и мнимым начальным элементом
 node* nodeInit_list_rand(int N) {
 	node* t = new node(0, NULL); //соглашение о нулевом элементе
 	node* x = t;
 	for (int i = 1; i < N; i++) {
 		t = (t->next = new node(rand()%100, NULL));
+	}
+	return x;
+}
+//односвязанный список с концом cо случайными элементами
+node* nodeInit_list_rand_without_head(int N) {
+	node* t = new node(rand() % 100, NULL); //соглашение о нулевом элементе
+	node* x = t;
+	for (int i = 1; i < N; i++) {
+		t = (t->next = new node(rand() % 100, NULL));
 	}
 	return x;
 }
