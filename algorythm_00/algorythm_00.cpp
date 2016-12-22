@@ -28,7 +28,6 @@ int main(){
 		}
 		cout << endl;
 
-
 		while (cin >> p >> q){
 			int t = id[p];
 
@@ -302,11 +301,73 @@ int main(){
 		b = b->next;
 		}
 		*/
+		//3.33
+		/*
+		node* rand_list_x = nodeInit_list_rand(10);
+		node* x = rand_list_x;
+		node* x_1 = rand_list_x;
+		node* y = rand_list_x;
+		while (x) {
+		std::cout << x << " " << x->item << "  " << x->next << std::endl;
+		x = x->next;
+		}
+		cout << endl;
+		node* a = rand_list_x;
+		while (y) {
+		if (a->item < y->item) {
+		a = y;
+		}
+		y = y->next;
+		if (!y) {
+		y = a;
+		y->next = NULL;
+		y = y->next;
+		}
+		}
+		while (x_1) {
+		std::cout << x_1 << " " << x_1->item << "  " << x_1->next << std::endl;
+		x_1 = x_1->next;
+		}
+		*/
+	}
+	// 3.34
+	node* rand_list_x = nodeInit_list_rand_without_head(10);
+	node* x = rand_list_x;
+	while (x) {
+		std::cout << x << " " << x->item << "  " << x->next << std::endl;
+		x = x->next;
 	}
 
-	
-	
-
+	/*
+	node* rand_list_x = nodeInit_list_rand(10);
+	node* x = rand_list_x;
+	node* y = rand_list_x->next;
+	while (x) {
+		std::cout << x << " " << x->item << "  " << x->next << std::endl;
+		x = x->next;
+	}
+	cout << endl;
+	node* a = rand_list_x->next;
+	while (y) {
+		if (a->item > y->item) {
+			a = y;
+			if (!a->next) {
+				y->next = NULL;
+			}
+		}
+		y = y->next;
+	}
+	a->next = rand_list_x->next->next;
+	rand_list_x->next = a;
+	node* x_1 = rand_list_x;
+	std::cout << a << " " << a->item << "  " << a->next << std::endl;
+	std::cout << rand_list_x << " " << rand_list_x->item << "  " << rand_list_x->next << std::endl;
+	cout << endl;
+	while (x_1) {
+		std::cout << x_1 << " " << x_1->item << "  " << x_1->next << std::endl;
+		x_1 = x_1->next;
+	}
+	*/
 	_getch();
     return 0;
 }
