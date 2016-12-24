@@ -54,6 +54,7 @@ struct node {
 	}
 	node(){}
 };
+
 //циклический список
 node* nodeInit(int N) {
 	node* t = new node(0, NULL);
@@ -143,3 +144,4 @@ node* construct(int N) {
 	freelist[N].item = N;
 	return freelist;
 }
+
