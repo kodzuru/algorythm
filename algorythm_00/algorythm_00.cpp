@@ -2,7 +2,7 @@
 //
 
 #include "stdafx.h"
-#include "functions.h"
+//#include "functions.h"
 typedef unsigned int ui;
 
 
@@ -354,7 +354,6 @@ int main(){
 		nodePrint(freelist);
 		*/
 	}
-
 
 
 
