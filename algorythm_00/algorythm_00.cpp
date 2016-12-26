@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 //#include "functions.h"
+#include "STACK.h"
 typedef unsigned int ui;
 
 
@@ -355,7 +356,30 @@ int main(){
 		*/
 	}
 
+	char* arr = "598+46**7*";
+	int N = strlen(arr);
+	STACK<int> a(N);
 
+	for (int i = 0; i < N; i++) {
+		a.push(arr[i]);
+	}
+	for (int i(0); i < N; i++) {
+		if (arr[i] == '+') {
+			a.push(a.pop() + a.pop());
+		}
+		if (arr[i] == '*') {
+			a.push(a.pop() * a.pop());
+		}
+		if ((arr[i] >= '0') && (arr[i] <= '9'))
+			a.push(0);
+		while ((arr[i] >= '0') && (arr[i] <= '9'))
+			a.push(10 * a.pop() + (arr[i++] - '0'));
+	}
+	cout << a.pop() << endl;
+
+	while (a.empty()) {
+		cout << (char)a.pop() << endl;
+	}
 
 	
 	_getch();

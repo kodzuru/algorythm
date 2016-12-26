@@ -2,25 +2,30 @@
 #include "STACK.h"
 
 
+
+
 template <typename Item> STACK<Item>::STACK(int N)
 {
-	counter = N;
+	counter = 0;
+	max_size = N;
 	node* t = new node(0, NULL); //соглашения о нулевом элементе
 	node* start = t;
-	for (int i = 1; i < N; i++) {
-		t = (t->next = new node(0, NULL));
-	}
+	//std::cout << counter << std::endl;
 }
 
 
 template <typename Item> STACK<Item>::~STACK()
 {
-	delete t;
-	delete start;
+	while (start)
+	{
+		node *pv = start;
+		start = start->next;
+		delete pv;
+	}
 }
 
 template <typename Item> int STACK<Item>::empty() const{
-	if (!x) {
+	if (!start) {
 		return 0;
 	}
 	else {
@@ -28,5 +33,20 @@ template <typename Item> int STACK<Item>::empty() const{
 	}
 }
 template <typename Item> void STACK<Item>::push(Item item) {
-	x = 
+
+
+	node* pv = new node(item, start);
+	start = pv;
+	
+	//std::cout << counter << std::endl;
+	
 }
+template <typename Item> Item STACK<Item>::pop() 
+{
+	Item item = start->item;
+	start = start->next;
+	counter--;
+	//std::cout << counter << std::endl;
+	return item;
+}
+template STACK<int>;

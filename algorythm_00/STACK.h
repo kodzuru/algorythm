@@ -6,7 +6,7 @@ template <typename Item>
 class STACK
 {
 private:
-	int counter;
+	int counter, max_size;
 	struct node {
 		int item;
 		node* next;
@@ -14,6 +14,7 @@ private:
 			item = x;
 			next = t;
 		}
+		node(){}
 	};
 	node* start;
 public:
