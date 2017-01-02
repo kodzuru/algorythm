@@ -4,7 +4,8 @@
 #include "stdafx.h"
 //#include "functions.h"
 #include "STACK.h" // STACK LIFO "last in first out"
-#include "QUEUE.h" // QUEUE FIFO "first in first out"
+#include "QUEUE.h" // QUEUE FIFO "first in first out".
+#include "STACK_ARRAY.h"
 typedef unsigned int ui;
 
 
@@ -378,21 +379,77 @@ int main(){
 		cout << a.pop() << endl;
 		}
 		*/
-	}
-
-	//очередь
-	QUEUE<int> q(10);
-	for (int i(0); i < 10; i++) {
+		//очередь FIFO
+		/*
+		QUEUE<int> q(10);
+		for (int i(0); i < 10; i++) {
 		q.put(i);
 		cout << i << "  ";
-	}
-	cout << endl;
-	for (int i(0); i < 10; i++) {
+		}
+		cout << endl;
+		for (int i(0); i < 10; i++) {
 		cout << q.get() << "  ";
+		}
+		cout << endl;
+		*/
+		//LIFO одинаковые элементы не добавляются just <int>
+		/*
+		STACK_ARRAY<int> sa(10);
+		for (int i(0); i < 5; i++) {
+		sa.push(i);
+		}
+		sa.push(7);
+		sa.push(7);
+		sa.push(2);
+		sa.push(9);
+		sa.push(4);
+
+		for (int i(0); i < 6; i++) {
+		cout << sa.pop() << " ";
+		}
+		cout << endl;
+		*/
+		//Нахождение особого элемента в массиве arr[i][j-1]<arr[i][j]<arr[i][j+1]
+		/*
+		int N = 3, M = 3;
+		int k = 0;
+		int** arr = new int*[N];
+		for (int i(0); i < N; i++) {
+			arr[i] = new int[M];
+		}
+		for (int i(0); i < N; i++) {
+			for (int j(0); j < M; j++) {
+				arr[i][j] = rand() % 10;
+				cout << arr[i][j] << "  ";
+			}
+			cout << endl;
+		}
+		for (int i(0); i < N; i++) {
+			for (int j(0); j < M; j++) {
+				if (j == 0) {
+					if (arr[i][j] < arr[i][j + 1])
+						k++;
+				}
+				if (j == M - 1) {
+					if (arr[i][j - 1] < arr[i][j])
+						k++;
+				}
+				if (j > 0 && j < (M - 1)) {
+					if (arr[i][j - 1] < arr[i][j] && arr[i][j] < arr[i][j + 1])
+						k++;
+				}
+			}
+		}
+		cout << k << endl;
+		for (int i(0); i < N; i++) {
+		delete[] arr[i];
+		}
+		delete arr;
+		*/
 	}
-	cout << endl;
 	
 	
+
 	_getch();
     return 0;
 }

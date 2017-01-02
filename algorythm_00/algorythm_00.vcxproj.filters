@@ -33,6 +33,9 @@
     <ClInclude Include="QUEUE.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="STACK_ARRAY.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -45,6 +48,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="QUEUE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="STACK_ARRAY.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
