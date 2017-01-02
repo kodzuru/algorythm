@@ -17,6 +17,7 @@ private:
 		node(){}
 	};
 	node* start;
+	Item *s, *temp;
 public:
 	STACK(int);
 	int empty() const;

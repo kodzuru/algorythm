@@ -7,7 +7,7 @@
 template <typename Item> STACK<Item>::STACK(int N)
 {
 	counter = 0;
-	max_size = N;
+	max_size = N;	
 	node* t = new node(0, NULL); //соглашения о нулевом элементе
 	node* start = t;
 	//std::cout << counter << std::endl;

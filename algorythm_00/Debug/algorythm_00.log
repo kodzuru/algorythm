@@ -1,6 +1,2 @@
-﻿  algorythm_00.cpp
-e:\work\c++_dev\algorythm\algorythm\algorythm_00\algorythm_00.cpp(16): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  QUEUE.cpp
-  Generating Code...
-  algorythm_00.vcxproj -> E:\Work\C++_dev\algorythm\algorythm\Debug\algorythm_00.exe
+﻿  algorythm_00.vcxproj -> E:\Work\C++_dev\algorythm\algorythm\Debug\algorythm_00.exe
   algorythm_00.vcxproj -> E:\Work\C++_dev\algorythm\algorythm\Debug\algorythm_00.pdb (Full PDB)
