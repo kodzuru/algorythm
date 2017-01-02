@@ -3,7 +3,8 @@
 
 #include "stdafx.h"
 //#include "functions.h"
-#include "STACK.h"
+#include "STACK.h" // STACK LIFO "last in first out"
+#include "QUEUE.h" // QUEUE FIFO "first in first out"
 typedef unsigned int ui;
 
 
@@ -354,33 +355,43 @@ int main(){
 		node* freelist = construct(10);
 		nodePrint(freelist);
 		*/
-	}
+		// вычисление постфиксного выражения
+		/*
+		char* arr = "67+34+*6+7*";
+		int N = strlen(arr);
+		STACK<int> a(N);
 
-	char* arr = "598+46**7*";
-	int N = strlen(arr);
-	STACK<int> a(N);
-
-	for (int i = 0; i < N; i++) {
-		a.push(arr[i]);
-	}
-	for (int i(0); i < N; i++) {
+		for (int i(0); i < N;) {
 		if (arr[i] == '+') {
-			a.push(a.pop() + a.pop());
+		a.push(a.pop() + a.pop());
+		i++;
 		}
 		if (arr[i] == '*') {
-			a.push(a.pop() * a.pop());
+		a.push(a.pop() * a.pop());
+		i++;
 		}
-		if ((arr[i] >= '0') && (arr[i] <= '9'))
-			a.push(0);
-		while ((arr[i] >= '0') && (arr[i] <= '9'))
-			a.push(10 * a.pop() + (arr[i++] - '0'));
+		while ((arr[i] >= '0') && (arr[i] <= '9')) {
+		a.push(arr[i++] - '0');
+		}
+		}
+		while (a.empty()) {
+		cout << a.pop() << endl;
+		}
+		*/
 	}
-	cout << a.pop() << endl;
 
-	while (a.empty()) {
-		cout << (char)a.pop() << endl;
+	//очередь
+	QUEUE<int> q(10);
+	for (int i(0); i < 10; i++) {
+		q.put(i);
+		cout << i << "  ";
 	}
-
+	cout << endl;
+	for (int i(0); i < 10; i++) {
+		cout << q.get() << "  ";
+	}
+	cout << endl;
+	
 	
 	_getch();
     return 0;

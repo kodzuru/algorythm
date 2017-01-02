@@ -49,4 +49,12 @@ template <typename Item> Item STACK<Item>::pop()
 	//std::cout << counter << std::endl;
 	return item;
 }
+template <typename Item> void STACK<Item>::Print() {
+	node* t = start;
+	while (t) {
+		std::cout << t << " " << t->item << "  " << t->next << std::endl;
+		t = t->next;
+	}
+}
+
 template STACK<int>;
