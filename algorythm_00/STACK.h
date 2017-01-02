@@ -10,7 +10,7 @@ private:
 	struct node {
 		int item;
 		node* next;
-		node(int x, node* t) {
+		node(Item x, node* t) {
 			item = x;
 			next = t;
 		}
@@ -22,6 +22,7 @@ public:
 	int empty() const;
 	void push(Item item);
 	Item pop();
+	void Print();
 	~STACK();
 };
 
